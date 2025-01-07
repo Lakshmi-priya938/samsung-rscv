@@ -1,1 +1,3 @@
-# samsung-rscv
+# samsung-rscv![WhatsApp Image 2025-01-03 at 1 09 17 PM](https://github.com/user-attachments/assets/87feb793-6d4f-4bb1-a1dc-e5d0eda69ca1)
+![WhatsApp Image 2025-01-03 at 1 14 26 PM](https://github.com/user-attachments/assets/6221d487-2885-4584-ba84-771e013f2a71)
+# This project is focused on the development and integration of RISC-V architecture with Samsung's technology stack. The RISC-V architecture is an open-source instruction set architecture (ISA) designed to be modular, customizable, and extensible. This project aims to explore, contribute to, and optimize RISC-V cores and related systems for a variety of use cases, including mobile devices, IoT, and high-performance computing solutions.
