@@ -94,17 +94,34 @@ This repository provides a breakdown of the MIPS instruction `addi a1, sp, 12`.
 
 0010011 11101 01011 000 00000 000000000011
 # MIPS Instruction: lw a3, 12(sp)
-Type: I-Type (Immediate)
+**Type:** I-Type (Immediate)
 
-Label: None (it's a direct instruction without a label)
+**Label:** None (it's a direct instruction without a label)
+
+**Details:**
+
+**Opcode for LW:** 0000011 (binary for opcode 0x23)
+**funct3:** 010 (for lw)
+**rd (a3):** 11 (Register number for $a3)
+**rs1 (sp):** 29 (Register number for $sp)
+**imm:** 12 (Immediate offset, a 12-bit signed integer)
+### 32-bit Instruction Encoding:
+
+0000011 11101 01011 010 00000 000000001100
+# MIPS Instruction:addiw a3, a3, 1
+
+**Type:** I-Type (Immediate)
+
+**Label:** None (it's a direct instruction without a label)
 
 Details:
 
-Opcode for LW: 0000011 (binary for opcode 0x23)
-funct3: 010 (for lw)
-rd (a3): 11 (Register number for $a3)
-rs1 (sp): 29 (Register number for $sp)
-imm: 12 (Immediate offset, a 12-bit signed integer)
-32-bit Instruction Encoding:
+**Opcode for ADDIW:** 0011011 (binary for opcode 0x3)
+**funct3 for ADDIW:** 000 (for addiw)
+**rd (a3):** 11 (Register number for $a3)
+**rs1 (a3):** 11 (Register number for $a3)
+**imm:** 1 (Immediate value, a 12-bit signed integer)
 
-0000011 11101 01011 010 00000 000000001100
+### 32-bit Instruction Encoding:
+Binary Representation:
+0011011 01011 01011 000 00000 000000000001
