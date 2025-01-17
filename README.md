@@ -93,7 +93,7 @@ This repository provides a breakdown of the MIPS instruction `addi a1, sp, 12`.
 ## 32-bit Instruction Encoding
 
 0010011 11101 01011 000 00000 000000000011
-# MIPS Instruction: lw a3, 12(sp)
+# MIPS Instruction:Clw a3, 12(sp)
 **Type:** I-Type (Immediate)
 
 **Label:** None (it's a direct instruction without a label)
@@ -125,3 +125,123 @@ Details:
 ### 32-bit Instruction Encoding:
 Binary Representation:
 0011011 01011 01011 000 00000 000000000001
+# MIPS Instruction:li s0, 0
+
+**Type:** I-Type (Immediate)
+
+**Label:** None (it's a direct instruction without a label)
+
+**Details:**
+
+**Opcode for LI:** 0010011 (This is the opcode for I-type instructions like addi, li, etc.)
+**funct3:** 000 (For the addi instruction, used with li as well)
+**rd (s0):** 8 (Register number for s0)
+**rs1:** N/A (There is no second register involved in this instruction)
+**imm:** 0 (Immediate value, which is a 12-bit signed integer)
+
+32-bit Instruction Encoding:
+### Binary Representation:
+000000000000 00000 000 01000 0010011li s0, 0
+# MIPS Instruction:mv a1, s0
+
+**Type:** I-Type (Immediate)
+
+**Label:** None (it's a direct instruction without a label)
+
+**Details:**
+
+**Opcode for MV:** 0010011 (The opcode for I-type instructions, similar to addi)
+**funct3:** 000 (For the addi instruction, used in mv as well)
+**rd (a1):** 11 (Register number for a1)
+**rs1 (s0):** 8 (Register number for s0)
+**imm:** 0 (Immediate value, indicating no change to the value being moved)
+
+### 32-bit Instruction Encoding:
+Binary Representation:
+
+000000000000 01000 000 01011 0010011
+# MIPS Instruction:auipc gp, 0x1e
+
+**Type:** U-Type (Immediate)
+
+**Label:** gp (destination register is x28)
+
+**Details:**
+
+**Opcode for AUIPC:** 0111111 (binary for AUIPC)
+**rd (gp):** 28 (Register number for gp, which corresponds to x28)
+**imm:** 0x1e (Immediate value, represented as a 20-bit unsigned integer)
+
+32-bit Instruction Encoding:
+### Binary Representation:
+00000000000000000000  11100 0111111
+auipc a2, 0x1e
+ 
+
+**Type:** U-Type (Upper Immediate)
+   **Label:** None (it's a direct instruction without a label)
+   **Details:**
+   **Opcode for AUIPC:** 0000111
+     **rd (a2):** 010 (Register number for a2)
+     **imm[31:12]:** 0x1e (Immediate value, which is a 20-bit unsigned integer)
+
+32-bit Instruction Encoding:
+ ### Binary Representation: 0000111 010 00000000000000000011110 
+ # MIPS Instruction:LI a1, 0 
+
+**Type:** I-Type (Immediate)
+**Label:** None (it's a direct instruction without a label)
+**Details:**
+  **Opcode for LI:** 0010011
+  **funct3:** 000 (for addi)
+  **rd (a1):** 011 (Register number for a1)
+**rs1 (implicit):** 00000 (Zero register, not explicitly specified)
+  **imm:** 000000000000 (Immediate value, which is a 12-bit signed integer)
+
+32-bit Instruction Encoding:
+ ### Binary Representation: 0010011 011 00000 000000000000
+ # MIPS Instruction:auipc s0, 0x1d
+
+**Type:** U-Type (Upper Immediate)
+**Label:** None (it's a direct instruction without a label)
+**Details:**
+**Opcode for AUIPC:** 0000111
+**rd (s0):** 01100 (Register number for s0)
+**imm[31:12]:** 0x1d (Immediate value, which is a 20-bit unsigned integer)
+32-bit Instruction Encoding:
+**Opcode for AUIPC:** 0000111
+   **rd (s0):** 01100
+   **imm[31:12]:** 00000000000000011101
+   ### Binary Representation: 0000111 01100 00000000000000011101
+   # MIPS Instruction: ld a5, 88(a0)
+
+**Type:** I-Type (Immediate)
+
+**Label:** None (it's a direct instruction without a label)
+
+**Details:**
+
+**Opcode for LD:** 0000011
+**funct3:** 011 (for ld)
+**rd (a5):** 15 (Register number for a5)
+**rs1 (a0):** 10 (Register number for a0)
+**imm:** 88 (Immediate value, which is a 12-bit unsigned integer)
+
+32-bit Instruction Encoding:
+### Binary Representation:
+0000011 01010 01111 0000000001011000
+ # MIPS Instruction:auipc ti, 0x0
+
+**Type:** U-Type (Upper Immediate)
+
+**Label:** None (it's a direct instruction without a label)
+
+**Details:**
+
+**Opcode for AUIPC:** 0010111
+**rd (ti):** 28 (Register number for ti in RISC-V)
+**imm:** 0x0 (Immediate value, which is a 20-bit unsigned integer)
+
+32-bit Instruction Encoding:
+### Binary Representation:
+0010111 00000 11100 0000000000000000
