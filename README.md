@@ -77,4 +77,34 @@ This repository provides a breakdown of the MIPS instruction `sd s0, 16(sp)`.
 ## 32-bit Instruction Encoding
 
 111111 00000 10000 11111 00000 00001000
+# MIPS Instruction: addi a1, sp, 12
 
+This repository provides a breakdown of the MIPS instruction `addi a1, sp, 12`.
+
+## Instruction Details
+
+* **Type:** I-Type (Immediate)
+* **Opcode:** 0010011 
+* **funct3:** 000 (for addi)
+* **rd (a1):** 11 (Register number for a1)
+* **rs1 (sp):** 29 (Register number for sp)
+* **imm:** 12 (Immediate value, a 12-bit signed integer)
+
+## 32-bit Instruction Encoding
+
+0010011 11101 01011 000 00000 000000000011
+# MIPS Instruction: lw a3, 12(sp)
+Type: I-Type (Immediate)
+
+Label: None (it's a direct instruction without a label)
+
+Details:
+
+Opcode for LW: 0000011 (binary for opcode 0x23)
+funct3: 010 (for lw)
+rd (a3): 11 (Register number for $a3)
+rs1 (sp): 29 (Register number for $sp)
+imm: 12 (Immediate offset, a 12-bit signed integer)
+32-bit Instruction Encoding:
+
+0000011 11101 01011 010 00000 000000001100
