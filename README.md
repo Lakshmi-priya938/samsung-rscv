@@ -24,21 +24,18 @@
 ### 32-bit Instruction Encoding:
 
 - **Binary Representation:**101010110000 01010 000 000000000000 0110111
-## ADDI Instruction
-
-### Instruction: `addi sp, sp, -32`
-
-> All the arithmetic and logical operations are performed using *I-type instruction format*, hence this instruction belongs to the I-type instruction set.
-
-- **Type:** I-Type (Immediate)
-- **Label:** None (This is a direct instruction without any labels)
-
-- **Details:**
-  - **Opcode for ADDI:** 0010011
-  - **funct3:** 000 (for addi)
-  - **rd (sp):** 29 (Register number for sp)
-  - **rs1 (sp):** 29 (Register number for sp)
-  - **imm:** -32 (Immediate value, which is a 12-bit signed integer encoded as 0xFFFFFFE0)
+## J Instruction
+## Instruction: j 15d24
+> This instruction jumps to the specified target address (15d24).
+> 
+ * Type: J-Type (Jump)
+ * Label: None (it's a direct instruction without a label)
+ * Details:
+   * Opcode for J: 1101111
+   * imm[20|10:1|11:19]: 15d24 (20-bit immediate value representing the target address)
+32-bit Instruction Encoding:
+ * Binary Representation:
+   1101111 00000 00000000000 1111011010010100
 
 ### 32-bit Instruction Encoding:
 
@@ -62,7 +59,8 @@
 ### 32-bit Instruction Encoding:
 
 - **Binary Representation:**111111 00000 11111 11111 00000 00011000
-# MIPS Instruction: sd s0, 16(sp)
+- ## SD Instruction
+#  Instruction: sd s0, 16(sp)
 
 This repository provides a breakdown of the MIPS instruction `sd s0, 16(sp)`.
 
@@ -77,22 +75,21 @@ This repository provides a breakdown of the MIPS instruction `sd s0, 16(sp)`.
 ## 32-bit Instruction Encoding
 
 111111 00000 10000 11111 00000 00001000
-# MIPS Instruction: addi a1, sp, 12
-
-This repository provides a breakdown of the MIPS instruction `addi a1, sp, 12`.
-
-## Instruction Details
-
-* **Type:** I-Type (Immediate)
-* **Opcode:** 0010011 
-* **funct3:** 000 (for addi)
-* **rd (a1):** 11 (Register number for a1)
-* **rs1 (sp):** 29 (Register number for sp)
-* **imm:** 12 (Immediate value, a 12-bit signed integer)
-
-## 32-bit Instruction Encoding
-
-0010011 11101 01011 000 00000 000000000011
+## BEQZ Instruction
+## Instruction: beqz a5, 10200
+> This instruction branches to the specified offset (10200) if the value in register a5 is equal to zero.
+> 
+ * Type: I-Type (Immediate)
+ * Label: None (it's a direct instruction without a label)
+ * Details:
+   * Opcode for BEQZ: 1100011
+   * rs1 (a5): 15 (Register number for a5)
+   * rs2: 0 (Not used in BEQZ)
+   * imm: 10200 (Immediate value, which is a 12-bit signed integer)
+32-bit Instruction Encoding:
+ * Binary Representation:
+   1100011 000 15 0000000 0111110011010000
+## CLW Instruction
 #  Instruction:Clw a3, 12(sp)
 **Type:** I-Type (Immediate)
 
@@ -108,7 +105,8 @@ This repository provides a breakdown of the MIPS instruction `addi a1, sp, 12`.
 ### 32-bit Instruction Encoding:
 
 0000011 11101 01011 010 00000 000000001100
-#  Instruction:addiw a3, a3, 1
+## ADDIW Instruction
+## Instruction:addiw a3, a3, 1
 
 **Type:** I-Type (Immediate)
 
@@ -142,6 +140,7 @@ Binary Representation:
 32-bit Instruction Encoding:
 ### Binary Representation:
 000000000000 00000 000 01000 0010011li s0, 0
+## MV Instruction
 #  Instruction:mv a1, s0
 
 **Type:** I-Type (Immediate)
@@ -187,6 +186,7 @@ Binary Representation:
 
 32-bit Instruction Encoding:
  ### Binary Representation: 0000111 010 00000000000000000011110 
+ ## LI Instruction
  # #Instruction:LI a1, 0 
 
 **Type:** I-Type (Immediate)
@@ -200,20 +200,22 @@ Binary Representation:
 
 32-bit Instruction Encoding:
  ### Binary Representation: 0010011 011 00000 000000000000
- #  Instruction:auipc s0, 0x1d
-
-**Type:** U-Type (Upper Immediate)
-**Label:** None (it's a direct instruction without a label)
-**Details:**
-**Opcode for AUIPC:** 0000111
-**rd (s0):** 01100 (Register number for s0)
-**imm[31:12]:** 0x1d (Immediate value, which is a 20-bit unsigned integer)
+## BNE Instruction
+## Instruction: bne a3, a5, 10100
+> This instruction branches to the specified offset (10100) if the values in registers a3 and a5 are not equal.
+> 
+ * Type: I-Type (Immediate)
+ * Label: None (it's a direct instruction without a label)
+ * Details:
+   * Opcode for BNE: 1100011
+   * rs1 (a3): 9 (Register number for a3)
+   * rs2 (a5): 15 (Register number for a5)
+   * imm: 10100 (Immediate value, which is a 12-bit signed integer)
 32-bit Instruction Encoding:
-**Opcode for AUIPC:** 0000111
-   **rd (s0):** 01100
-   **imm[31:12]:** 00000000000000011101
-   ### Binary Representation: 0000111 01100 00000000000000011101
-   #  Instruction: ld a5, 88(a0)
+ * Binary Representation:
+   1100011 000 9 15 0111110100000000
+   ## LD Instruction
+   ## Instruction: ld a5, 88(a0)
 
 **Type:** I-Type (Immediate)
 
@@ -230,18 +232,16 @@ Binary Representation:
 32-bit Instruction Encoding:
 ### Binary Representation:
 0000011 01010 01111 0000000001011000
- #  Instruction:auipc ti, 0x0
-
-**Type:** U-Type (Upper Immediate)
-
-**Label:** None (it's a direct instruction without a label)
-
-**Details:**
-
-**Opcode for AUIPC:** 0010111
-**rd (ti):** 28 (Register number for ti in RISC-V)
-**imm:** 0x0 (Immediate value, which is a 20-bit unsigned integer)
-
+ ## JAL Instruction
+## Instruction: jal ra, 15dd0
+> This instruction jumps to the specified target address (15dd0) and stores the address of the next instruction (the return address) in register ra (register 1).
+> 
+ * Type: U-Type (Immediate)
+ * Label: None (it's a direct instruction without a label)
+ * Details:
+   * Opcode for JAL: 1101111
+   * rd (ra): 1 (Register number for ra)
+   * imm[20|10:1|11:19]: 15dd0 (20-bit immediate value representing the target address)
 32-bit Instruction Encoding:
-### Binary Representation:
-0010111 00000 11100 0000000000000000
+ * Binary Representation:
+   1101111 00001 00000000000 1111011011010000
