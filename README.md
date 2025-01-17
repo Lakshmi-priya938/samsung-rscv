@@ -179,20 +179,21 @@ Instruction: lbu a5, 1944(gp)
 
 32-bit Instruction Encoding:
  ### Binary Representation: 0000111 010 00000000000000000011110 
- ## LI Instruction
- # #Instruction:LI a1, 0 
-
-**Type:** I-Type (Immediate)
-**Label:** None (it's a direct instruction without a label)
-**Details:**
-  **Opcode for LI:** 0010011
-  **funct3:** 000 (for addi)
-  **rd (a1):** 011 (Register number for a1)
-**rs1 (implicit):** 00000 (Zero register, not explicitly specified)
-  **imm:** 000000000000 (Immediate value, which is a 12-bit signed integer)
-
+## ANDI Instruction
+## Instruction: andi a4, a5, 1
+> This instruction performs a bitwise AND operation between the value in register a5 and the immediate value 1, and stores the result in register a4.
+> 
+ * Type: I-Type (Immediate)
+ * Label: None (it's a direct instruction without a label)
+ * Details:
+   * Opcode for ANDI: 0011001
+   * funct3: 111 (for andi)
+   * rd (a4): 10 (Register number for a4)
+   * rs1 (a5): 15 (Register number for a5)
+   * imm: 1 (Immediate value, which is a 12-bit signed integer)
 32-bit Instruction Encoding:
- ### Binary Representation: 0010011 011 00000 000000000000
+ * Binary Representation:
+   0011001 111 15 10 0000000000000001
 ## BNE Instruction
 ## Instruction: bne a3, a5, 10100
 > This instruction branches to the specified offset (10100) if the values in registers a3 and a5 are not equal.
