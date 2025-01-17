@@ -93,7 +93,7 @@ This repository provides a breakdown of the MIPS instruction `addi a1, sp, 12`.
 ## 32-bit Instruction Encoding
 
 0010011 11101 01011 000 00000 000000000011
-# MIPS Instruction:Clw a3, 12(sp)
+#  Instruction:Clw a3, 12(sp)
 **Type:** I-Type (Immediate)
 
 **Label:** None (it's a direct instruction without a label)
@@ -108,7 +108,7 @@ This repository provides a breakdown of the MIPS instruction `addi a1, sp, 12`.
 ### 32-bit Instruction Encoding:
 
 0000011 11101 01011 010 00000 000000001100
-# MIPS Instruction:addiw a3, a3, 1
+#  Instruction:addiw a3, a3, 1
 
 **Type:** I-Type (Immediate)
 
@@ -125,7 +125,7 @@ Details:
 ### 32-bit Instruction Encoding:
 Binary Representation:
 0011011 01011 01011 000 00000 000000000001
-# MIPS Instruction:li s0, 0
+#  Instruction:li s0, 0
 
 **Type:** I-Type (Immediate)
 
@@ -142,7 +142,7 @@ Binary Representation:
 32-bit Instruction Encoding:
 ### Binary Representation:
 000000000000 00000 000 01000 0010011li s0, 0
-# MIPS Instruction:mv a1, s0
+#  Instruction:mv a1, s0
 
 **Type:** I-Type (Immediate)
 
@@ -160,7 +160,7 @@ Binary Representation:
 Binary Representation:
 
 000000000000 01000 000 01011 0010011
-# MIPS Instruction:auipc gp, 0x1e
+#  Instruction:auipc gp, 0x1e
 
 **Type:** U-Type (Immediate)
 
@@ -175,7 +175,7 @@ Binary Representation:
 32-bit Instruction Encoding:
 ### Binary Representation:
 00000000000000000000  11100 0111111
-auipc a2, 0x1e
+#  Instruction:auipc a2, 0x1e
  
 
 **Type:** U-Type (Upper Immediate)
@@ -187,7 +187,7 @@ auipc a2, 0x1e
 
 32-bit Instruction Encoding:
  ### Binary Representation: 0000111 010 00000000000000000011110 
- # MIPS Instruction:LI a1, 0 
+ #  Instruction:LI a1, 0 
 
 **Type:** I-Type (Immediate)
 **Label:** None (it's a direct instruction without a label)
@@ -200,7 +200,7 @@ auipc a2, 0x1e
 
 32-bit Instruction Encoding:
  ### Binary Representation: 0010011 011 00000 000000000000
- # MIPS Instruction:auipc s0, 0x1d
+ #  Instruction:auipc s0, 0x1d
 
 **Type:** U-Type (Upper Immediate)
 **Label:** None (it's a direct instruction without a label)
@@ -213,7 +213,7 @@ auipc a2, 0x1e
    **rd (s0):** 01100
    **imm[31:12]:** 00000000000000011101
    ### Binary Representation: 0000111 01100 00000000000000011101
-   # MIPS Instruction: ld a5, 88(a0)
+   #  Instruction: ld a5, 88(a0)
 
 **Type:** I-Type (Immediate)
 
@@ -230,7 +230,7 @@ auipc a2, 0x1e
 32-bit Instruction Encoding:
 ### Binary Representation:
 0000011 01010 01111 0000000001011000
- # MIPS Instruction:auipc ti, 0x0
+ #  Instruction:auipc ti, 0x0
 
 **Type:** U-Type (Upper Immediate)
 
