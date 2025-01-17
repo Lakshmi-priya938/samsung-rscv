@@ -6,7 +6,17 @@
 - ![spike](https://github.com/user-attachments/assets/ab265834-aac4-4254-be41-8b9aeee6baaa)
   ![WhatsApp Image 2025-01-17 at 21 01 35_93460aec](https://github.com/user-attachments/assets/9bc968e0-2cfd-44f4-ace2-e06742f35312)
 ![WhatsApp Image 2025-01-17 at 21 02 45_f5d2ad52](https://github.com/user-attachments/assets/481bc67b-26bc-4d50-b184-77d20cf9383d)
+Type: U-Type (Upper Immediate)
 
+Label: None (it's a direct instruction without a label)
 
+Details:
+
+Opcode for LUI: 0110111
+funct3: 000 (for lui)
+rd (a0): 10 (Register number for a0)
+imm: 0x2b000 (Immediate value, shifted left by 12 bits to occupy the upper 20 bits)
+32-bit Instruction Encoding:
+**Binary Representation:**101010110000 01010 000 000000000000 0110111
 
 
