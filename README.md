@@ -23,7 +23,45 @@
 
 ### 32-bit Instruction Encoding:
 
-- **Binary Representation:**
+- **Binary Representation:**101010110000 01010 000 000000000000 0110111
+## ADDI Instruction
+
+### Instruction: `addi sp, sp, -32`
+
+> All the arithmetic and logical operations are performed using *I-type instruction format*, hence this instruction belongs to the I-type instruction set.
+
+- **Type:** I-Type (Immediate)
+- **Label:** None (This is a direct instruction without any labels)
+
+- **Details:**
+  - **Opcode for ADDI:** 0010011
+  - **funct3:** 000 (for addi)
+  - **rd (sp):** 29 (Register number for sp)
+  - **rs1 (sp):** 29 (Register number for sp)
+  - **imm:** -32 (Immediate value, which is a 12-bit signed integer encoded as 0xFFFFFFE0)
+
+### 32-bit Instruction Encoding:
+
+- **Binary Representation:**001000 11101 11101 FFFFFFE0
+## SD Instruction
+
+### Instruction: `sd ra, 24(sp)`
+
+> The `sd` (Store Double) instruction is used to store a 64-bit value from a register into memory and belongs to the *S-type* instruction set.
+
+- **Type:** S-Type (Store)
+- **Label:** None (it's a direct instruction without a label)
+
+- **Details:**
+  - **Opcode for SD:** 0100011
+  - **funct3:** 011 (for sd)
+  - **rs2 (ra):** 1 (Register number for ra)
+  - **rs1 (sp):** 2 (Register number for sp)
+  - **imm:** 24 (Immediate value, which is a 12-bit signed integer)
+
+### 32-bit Instruction Encoding:
+
+- **Binary Representation:**111111 00000 11111 11111 00000 00011000
 
 
 
