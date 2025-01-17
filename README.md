@@ -123,23 +123,20 @@ Details:
 ### 32-bit Instruction Encoding:
 Binary Representation:
 0011011 01011 01011 000 00000 000000000001
-#  Instruction:li s0, 0
-
-**Type:** I-Type (Immediate)
-
-**Label:** None (it's a direct instruction without a label)
-
-**Details:**
-
-**Opcode for LI:** 0010011 (This is the opcode for I-type instructions like addi, li, etc.)
-**funct3:** 000 (For the addi instruction, used with li as well)
-**rd (s0):** 8 (Register number for s0)
-**rs1:** N/A (There is no second register involved in this instruction)
-**imm:** 0 (Immediate value, which is a 12-bit signed integer)
-
+BLEZ Instruction
+Instruction: blez a3, 10140
+> This instruction branches to the specified offset (10140) if the value in register a3 is less than or equal to zero.
+> 
+ * Type: I-Type (Immediate)
+ * Label: None (it's a direct instruction without a label)
+ * Details:
+   * Opcode for BLEZ: 1100011
+   * rs1 (a3): 9 (Register number for a3)
+   * rs2: 0 (Not used in BLEZ)
+   * imm: 10140 (Immediate value, which is a 12-bit signed integer)
 32-bit Instruction Encoding:
-### Binary Representation:
-000000000000 00000 000 01000 0010011li s0, 0
+ * Binary Representation:
+   1100011 000 9 0000000 0111110010100000
 LBU Instruction
 Instruction: lbu a5, 1944(gp)
 > This instruction loads an unsigned byte of data from the memory address calculated by adding the immediate value (1944) to the value in register gp (global pointer) and stores it in register a5.
