@@ -62,6 +62,6 @@
 ### 32-bit Instruction Encoding:
 
 - **Binary Representation:**111111 00000 11111 11111 00000 00011000
-
+## Instruction: SD s0, 16(sp) ### Type - I-Type (Immediate) ### Label - None (it's a direct instruction without a label) ### Details - **Opcode for SD**: 111111 (binary for opcode 0x2F) - **rs (sp)**: 29 (Register number for $sp) - **rt (s0)**: 16 (Register number for $s0) - **Offset**: 16 (Immediate offset, a 16-bit signed integer) ### 32-bit Instruction Encoding - **Binary Representation**: `111111 00000 10000 11111 00000 00001000`
 
 
