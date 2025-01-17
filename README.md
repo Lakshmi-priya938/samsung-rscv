@@ -123,8 +123,8 @@ Details:
 ### 32-bit Instruction Encoding:
 Binary Representation:
 0011011 01011 01011 000 00000 000000000001
-BLEZ Instruction
-Instruction: blez a3, 10140
+## BLEZ Instruction
+## Instruction: blez a3, 10140
 > This instruction branches to the specified offset (10140) if the value in register a3 is less than or equal to zero.
 > 
  * Type: I-Type (Immediate)
@@ -137,8 +137,8 @@ Instruction: blez a3, 10140
 32-bit Instruction Encoding:
  * Binary Representation:
    1100011 000 9 0000000 0111110010100000
-LBU Instruction
-Instruction: lbu a5, 1944(gp)
+## LBU Instruction
+## Instruction: lbu a5, 1944(gp)
 > This instruction loads an unsigned byte of data from the memory address calculated by adding the immediate value (1944) to the value in register gp (global pointer) and stores it in register a5.
 > 
  * Type: I-Type (Immediate)
@@ -167,18 +167,22 @@ Instruction: lbu a5, 1944(gp)
 32-bit Instruction Encoding:
 ### Binary Representation:
 00000000000000000000  11100 0111111
-## Instruction:auipc a2, 0x1e
- 
-
-**Type:** U-Type (Upper Immediate)
-   **Label:** None (it's a direct instruction without a label)
-   **Details:**
-   **Opcode for AUIPC:** 0000111
-     **rd (a2):** 010 (Register number for a2)
-     **imm[31:12]:** 0x1e (Immediate value, which is a 20-bit unsigned integer)
-
+## SUB Instruction
+## Instruction: sub a2, a2, a0
+> This instruction subtracts the value in register a0 from the value in register a2 and stores the result in register a2.
+> 
+ * Type: R-Type (Register)
+ * Label: None (it's a direct instruction without a label)
+ * Details:
+   * Opcode for SUB: 0000000
+   * funct3: 000 (for sub)
+   * rd (a2): 6 (Register number for a2)
+   * rs1 (a2): 6 (Register number for a2)
+   * rs2 (a0): 0 (Register number for a0)
+   * funct7: 0100000 (for sub)
 32-bit Instruction Encoding:
- ### Binary Representation: 0000111 010 00000000000000000011110 
+ * Binary Representation:
+   0000000 6 000 6 0 0100000
 ## ANDI Instruction
 ## Instruction: andi a4, a5, 1
 > This instruction performs a bitwise AND operation between the value in register a5 and the immediate value 1, and stores the result in register a4.
