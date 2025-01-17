@@ -175,7 +175,7 @@ Binary Representation:
 32-bit Instruction Encoding:
 ### Binary Representation:
 00000000000000000000  11100 0111111
-#  Instruction:auipc a2, 0x1e
+## Instruction:auipc a2, 0x1e
  
 
 **Type:** U-Type (Upper Immediate)
@@ -187,7 +187,7 @@ Binary Representation:
 
 32-bit Instruction Encoding:
  ### Binary Representation: 0000111 010 00000000000000000011110 
- #  Instruction:LI a1, 0 
+ # #Instruction:LI a1, 0 
 
 **Type:** I-Type (Immediate)
 **Label:** None (it's a direct instruction without a label)
