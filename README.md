@@ -6,6 +6,7 @@
 - ![spike](https://github.com/user-attachments/assets/ab265834-aac4-4254-be41-8b9aeee6baaa)
   ![WhatsApp Image 2025-01-17 at 21 01 35_93460aec](https://github.com/user-attachments/assets/9bc968e0-2cfd-44f4-ace2-e06742f35312)
 ![WhatsApp Image 2025-01-17 at 21 02 45_f5d2ad52](https://github.com/user-attachments/assets/481bc67b-26bc-4d50-b184-77d20cf9383d)
+##task3
 ## LUI Instruction
 
 ### Instruction: `lui a0, 0×2b`
