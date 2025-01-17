@@ -140,25 +140,21 @@ Binary Representation:
 32-bit Instruction Encoding:
 ### Binary Representation:
 000000000000 00000 000 01000 0010011li s0, 0
-## MV Instruction
-#  Instruction:mv a1, s0
-
-**Type:** I-Type (Immediate)
-
-**Label:** None (it's a direct instruction without a label)
-
-**Details:**
-
-**Opcode for MV:** 0010011 (The opcode for I-type instructions, similar to addi)
-**funct3:** 000 (For the addi instruction, used in mv as well)
-**rd (a1):** 11 (Register number for a1)
-**rs1 (s0):** 8 (Register number for s0)
-**imm:** 0 (Immediate value, indicating no change to the value being moved)
-
-### 32-bit Instruction Encoding:
-Binary Representation:
-
-000000000000 01000 000 01011 0010011
+LBU Instruction
+Instruction: lbu a5, 1944(gp)
+> This instruction loads an unsigned byte of data from the memory address calculated by adding the immediate value (1944) to the value in register gp (global pointer) and stores it in register a5.
+> 
+ * Type: I-Type (Immediate)
+ * Label: None (it's a direct instruction without a label)
+ * Details:
+   * Opcode for LBU: 0001000
+   * funct3: 000 (for lbu)
+   * rs1 (gp): 3 (Register number for gp)
+   * rd (a5): 15 (Register number for a5)
+   * imm: 1944 (Immediate value, which is a 12-bit signed integer)
+32-bit Instruction Encoding:
+ * Binary Representation:
+   0001000 000 3 15 0111011100000000
 #  Instruction:auipc gp, 0x1e
 
 **Type:** U-Type (Immediate)
