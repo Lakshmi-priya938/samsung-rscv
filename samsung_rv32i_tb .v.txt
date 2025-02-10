@@ -1,28 +1,42 @@
 module samsung_rv32i_tb;
 
-reg clk, RN;
-wire [31:0] WB_OUT, NPC;
+    reg clk, reset;
+    reg [31:0] instr;
+    wire [31:0] WB_OUT, NPC;
+    
+    // Instantiate the DUT (Device Under Test)
+    samsung_rv32i rv32(clk, reset, instr, NPC, WB_OUT);
 
-// Instantiate the DUT (Device Under Test)
-samsung_rv32i rv32(clk, RN, NPC, WB_OUT);
+    // Generate clock signal with a period of 6 time units
+    always #3 clk = !clk;
 
-// Generate clock signal
-always #3 clk = !clk;
+    initial begin 
+        // Initialize reset and clock
+        reset = 1'b1;
+        clk = 1'b1;
+        instr = 32'b0;
 
-initial begin 
-    // Initialize signals
-    RN  = 1'b1;
-    clk = 1'b1;
+        // Dump waveform for debugging
+        $dumpfile("samsung_rv32i.vcd"); // Generate VCD waveform file
+        $dumpvars(0, samsung_rv32i_tb);
+      
+        // Apply reset and then release
+        #5 reset = 1'b0;
 
-    // Dump waveform file
-    $dumpfile("samsung_rv32i.vcd"); // VCD format for waveform visualization
-    $dumpvars(0, samsung_rv32i_tb);
-  
-    // Deassert reset after some time
-    #5 RN = 1'b0;
-  
-    // Run simulation for a set duration
-    #300 $finish;
-end
+        // Apply test instructions
+        #10 instr = 32'h01208300; // Example instruction
+        #10 instr = 32'h02209380;
+        #10 instr = 32'h0330A400;
+        #10 instr = 32'h04513480;
+        #10 instr = 32'h0540C500;
+
+        // Run the simulation for 5000 time units to observe results
+        #5000 $finish;
+    end
+
+    // Monitor output changes for debugging
+    always @(posedge clk) begin
+        $display("Time: %0t | NPC: %h | WB_OUT: %h", $time, NPC, WB_OUT);
+    end
 
 endmodule
