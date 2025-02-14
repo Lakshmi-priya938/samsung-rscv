@@ -244,3 +244,10 @@ Binary Representation:
 32-bit Instruction Encoding:
  * Binary Representation:
    1101111 00001 00000000000 1111011011010000
+![image](https://github.com/user-attachments/assets/78077125-c5a2-47c1-810a-2e97a37a4c68)
+![image](https://github.com/user-attachments/assets/bbdd4f91-011c-4259-911c-7e1d8a0b00a9)
+![image](https://github.com/user-attachments/assets/0910b12e-e907-4619-89fa-e455cb8dd71e)
+
+
+
+
